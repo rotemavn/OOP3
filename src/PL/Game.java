@@ -10,7 +10,7 @@ public class Game extends JFrame{
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(1409,830);
         this.setResizable(false);
-        JPanel mainMenu=new MainMenu(null);
+        JPanel mainMenu=new MainMenu();
         this.setContentPane(mainMenu);
         this.setVisible(true);
 

@@ -97,7 +97,7 @@ public class GameWindow extends JPanel implements ActionListener{
         else if(e.getSource()== goToMenu){
             this.setVisible(false);
             super.removeAll();
-            ((Game)this.getRootPane().getParent()).newAdd(new MainMenu(this));
+            ((Game)this.getRootPane().getParent()).newAdd(new MainMenu());
         }
 
     }
@@ -125,7 +125,7 @@ public class GameWindow extends JPanel implements ActionListener{
         this.setVisible(false);
         _t.stop();
         removeAll();
-        getParent().add(new MainMenu(null));
+        ((Game)this.getRootPane().getParent()).newAdd(new MainMenu());
     }
 
     public void paintComponent(Graphics g){

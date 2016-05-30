@@ -91,7 +91,7 @@ class LevelSelection extends LevelActions implements MouseListener {
             @Override
             //implementing the action listener
             public void valueChanged(ListSelectionEvent e) {
-                int l=levelTable.getSelectedRow()+1;
+                int l=levelTable.getSelectedRow();
                 try {
                     startPlaying(l);
                 } catch (IOException e1) {

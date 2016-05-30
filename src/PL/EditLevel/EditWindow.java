@@ -159,7 +159,7 @@ public class EditWindow extends JPanel implements ActionListener {
 
         if (e.getSource() == goToMenu) {
             this.setVisible(false);
-            ((Game)this.getRootPane().getParent()).newAdd(new MainMenu(this));
+            ((Game)this.getRootPane().getParent()).newAdd(new MainMenu());
         }
 
         if(e.getSource()==_btnSave){

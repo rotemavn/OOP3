@@ -21,12 +21,9 @@ public class MainMenu extends JPanel implements MouseListener {
     private JButton option3;
 
 
-    public MainMenu(Container c) {
+    public MainMenu() {
 
         try {
-            if(c!=null) {
-                super.remove(c);
-            }
             String currPath= Paths.get(".").toAbsolutePath().normalize().toString();
             background= ImageIO.read(new File(currPath+"/Images/backgroundNew.png"));
 
