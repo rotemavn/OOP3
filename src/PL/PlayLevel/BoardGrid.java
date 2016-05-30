@@ -1,8 +1,11 @@
 package PL.PlayLevel;
 
-import BL.*;
+import BL.Level;
+import BL.Move;
+import BL.Piece;
+import BL.Position;
 import PL.GameBoard;
-import javafx.util.*;
+import javafx.util.Pair;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,8 +19,8 @@ import java.io.IOException;
 public class BoardGrid extends GameBoard {
 
     private boolean _isFinished;
-    protected final Position END_POSITION;
-    protected GameWindow gw;
+    private final Position END_POSITION;
+    private GameWindow gw;
 
 
     public BoardGrid(Level l,GameWindow gw) throws IOException {
@@ -28,6 +31,7 @@ public class BoardGrid extends GameBoard {
         this.setFocusable(true);
         this._l = new Level(l);
         this.setPreferredSize(new Dimension(41 * 6, 41 * 6));
+
 
 
         for (Piece p : l.get_Pieces()) {
@@ -42,8 +46,6 @@ public class BoardGrid extends GameBoard {
             buttonArr[place.getX()][place.getY()] = b;
 
         }
-
-        //end mark endspot
         setVisible(true);
     }
 
@@ -54,6 +56,7 @@ public class BoardGrid extends GameBoard {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton pressed = (JButton) e.getSource();
+        pressed.requestFocus();
         Piece tp = _l.getPieceByPosition(GetButtonIndex(pressed));
         _selected = new Pair<Piece, JButton>(tp, (JButton) e.getSource());
     }
@@ -125,12 +128,12 @@ public class BoardGrid extends GameBoard {
         boolean ans;
         Position picEndPos=pic.get_end();
         ans=picEndPos.equals(END_POSITION)||pic.get_start().equals(END_POSITION);
-        if(ans==true) {
+        if(ans) {
             endGame();
         }
     }
 
-    public void endGame(){
+    private void endGame(){
         _isFinished = true;
         gw.finished();
     }

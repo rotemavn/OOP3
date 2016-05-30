@@ -3,7 +3,7 @@ package PL.PlayLevel;
 /**
  * Created by liorbass on 30/05/2016.
  */
-public class Clock {
+ class Clock {
     private int _secs;
     private int _mins;
     private int _hours;

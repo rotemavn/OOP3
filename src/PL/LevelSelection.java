@@ -1,4 +1,5 @@
 package PL;
+
 import BL.Level;
 import PL.PlayLevel.GameWindow;
 
@@ -9,14 +10,17 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.MouseListener;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Paths;
 
 
 class LevelSelection extends LevelActions implements MouseListener {
 
     private final File[] levels;
-    protected final File levelsFolder;
+    private final File levelsFolder;
 
     //constructor
     public LevelSelection(){
@@ -87,16 +91,12 @@ class LevelSelection extends LevelActions implements MouseListener {
         levelTable.setSelectionBackground(Color.red);
 
 
-        levelTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            //implementing the action listener
-            public void valueChanged(ListSelectionEvent e) {
-                int l=levelTable.getSelectedRow();
-                try {
-                    startPlaying(l);
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+        levelTable.getSelectionModel().addListSelectionListener(e -> {
+            int l=levelTable.getSelectedRow();
+            try {
+                startPlaying(l);
+            } catch (IOException e1) {
+                e1.printStackTrace();
             }
         });
     }
@@ -106,7 +106,7 @@ class LevelSelection extends LevelActions implements MouseListener {
      * @param l - level number
      *          creating a new level and showing a new game window.
      */
-    public void startPlaying(int l) throws IOException {
+    private void startPlaying(int l) throws IOException {
         Level level=new Level(levels[l]); // create a new level
         this.setVisible(false);
         ((Game)this.getRootPane().getParent()).newAdd(new GameWindow(level)); // opening a new game window with the level.

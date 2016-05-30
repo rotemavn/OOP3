@@ -1,7 +1,9 @@
 package PL;
+
 import BL.Level;
 import PL.EditLevel.EditWindow;
 import PL.PlayLevel.GameWindow;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -9,7 +11,6 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.peer.ButtonPeer;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -107,11 +108,8 @@ public class LevelEditor extends LevelActions implements MouseListener {
         super.add(Box.createGlue());
 
         //implementing the action listener
-        levelList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                target=levelList.getSelectedIndex(); // saving the level to be deleted
-            }
+        levelList.getSelectionModel().addListSelectionListener(e -> {
+            target=levelList.getSelectedIndex(); // saving the level to be deleted
         });
 
 

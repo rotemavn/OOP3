@@ -99,11 +99,7 @@ public class EditWindow extends JPanel implements ActionListener {
         this.revalidate();
     }
 
-    public EditWindow(Level l) {
-
-    }
-
-    public void setButton(JButton b, int size, Orientation orientation) {
+    private void setButton(JButton b, int size, Orientation orientation) {
         try {
             String currPath = Paths.get(".").toAbsolutePath().normalize().toString();
             ImageIcon truckVer = new ImageIcon(ImageIO.read(new File(currPath + "/Images/TruckVer2.png")));
@@ -112,6 +108,7 @@ public class EditWindow extends JPanel implements ActionListener {
             ImageIcon truckHor = new ImageIcon(ImageIO.read(new File(currPath + "/Images/truckHor2.png")));
             b.setOpaque(false);
             b.setBorderPainted(false);
+            b.setFocusable(false);
 
             if (orientation == Orientation.HORIZONTAL) {  //piece is horizontal
 

@@ -2,14 +2,15 @@ package BL;
 
 import java.io.*;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Stack;
+import java.util.Vector;
 
 /**
  * Created by liorbass on 17/05/2016.
  */
 public class Level {
 
-    private final int SIZE = 6;
+    protected final int SIZE = 6;
     private Vector<Piece> _vp;
     private String _bestTime;
     private Stack<Move> _sm;
@@ -122,7 +123,7 @@ public class Level {
      * @param m move to check
      * @return true if move is valid, false otherwise
      */
-    public boolean isValidMove(Move m) {
+    private boolean isValidMove(Move m) {
         boolean ans = false;
         if (m.GetEnd().isValid()) {
             if (m.getPiece().get_orientation() == Orientation.HORIZONTAL) {
@@ -171,9 +172,8 @@ public class Level {
      * @param p the piece to check
      * @return true if will can place the pos, false otherwise
      */
-    public boolean canPlace(Piece p, Position pos) {
+    private boolean canPlace(Piece p, Position pos) {
         //create temp piece with the new position,
-
 
         Piece tempPiece = new Piece(pos, p.get_size(), p.get_role(), p.get_orientation());
             //check if it's colliding with any existing piece other than then original
@@ -192,15 +192,6 @@ public class Level {
     }
 
     /**
-     * Checks if the current Level is valid
-     *
-     * @return
-     */
-    public boolean checkValid() {
-        return false;
-    }
-
-    /**
      * Converts current Level to string
      *
      * @return
@@ -215,14 +206,6 @@ public class Level {
         return ans;
     }
 
-    /**
-     * Saves the Level to txt file
-     *
-     * @return
-     */
-    public boolean Save() {
-        return false;
-    }
 
     /**
      * Geter of Pieces
@@ -278,9 +261,9 @@ public class Level {
         try {
             File file = new File(levelsFolder+"\\"+levName);
             FileWriter fileWriter = new FileWriter(file);
-            for(int i=0;i<levParts.length;i++){
-                fileWriter.write(levParts[i]);
-                fileWriter.write((System.getProperty( "line.separator")));
+            for (String levPart : levParts) {
+                fileWriter.write(levPart);
+                fileWriter.write((System.getProperty("line.separator")));
             }
 
             fileWriter.flush();
@@ -305,9 +288,9 @@ public class Level {
         try {
             File file = new File(levelsFolder+"\\"+levName);
             FileWriter fileWriter = new FileWriter(file);
-            for(int i=0;i<levParts.length;i++){
-                fileWriter.write(levParts[i]);
-                fileWriter.write((System.getProperty( "line.separator")));
+            for (String levPart : levParts) {
+                fileWriter.write(levPart);
+                fileWriter.write((System.getProperty("line.separator")));
             }
 
             fileWriter.flush();
@@ -327,7 +310,7 @@ public class Level {
         return _bestTime;
     }
 
-    public File get_levelFile(){
+    private File get_levelFile(){
         return this.levelFile;
     }
 }

@@ -13,7 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-import static BL.Orientation.VERTICAL;
 import static BL.Role.Target;
 
 /**
