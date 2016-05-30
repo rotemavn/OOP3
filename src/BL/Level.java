@@ -273,7 +273,7 @@ public class Level {
         String currPath = Paths.get(".").toAbsolutePath().normalize().toString();
         levelsFolder = new File(currPath + "/Levels");
         levels = levelsFolder.listFiles();
-        levName="l"+levels.length+".txt";
+        levName="l"+(levels.length+1)+".txt";
         //end get level name
         try {
             File file = new File(levelsFolder+"\\"+levName);

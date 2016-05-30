@@ -160,12 +160,12 @@ public class LevelEditor extends LevelActions implements MouseListener {
      */
     private void deleteLevel(){
         String lName=levels[target].getName();
-        levels[target].renameTo(new File("Temp.txt"));
+        levels[target].delete(); // removing the level file from the Level folder
         for(int i=target+1;i<levels.length;i++) // rename the files name greather then this
         {
-            levels[i].renameTo(new File("l"+(i-1)+".txt"));
+            levels[i].renameTo(new File(levelsFolder+"/l"+(i)+".txt"));
         }
-        levels[target].delete(); // removing the level file from the Level folder
+
         JOptionPane.showMessageDialog(new JFrame(),"The level was deleted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
         setVisible(false);
         ((Game)this.getRootPane().getParent()).newAdd(new LevelEditor());
