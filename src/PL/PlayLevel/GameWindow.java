@@ -22,9 +22,7 @@ public class GameWindow extends JPanel implements ActionListener{
     private BoardGrid _bg;
     private JButton _undo;
     private JButton goToMenu;
-    private int _seconds;
-    private int _minuts;
-    private int _hours;
+    private Clock _c;
     private BufferedImage background;
     private Level level;
 
@@ -59,11 +57,10 @@ public class GameWindow extends JPanel implements ActionListener{
 
         //start timer initialization
         _t=new Timer(1000,this); //move every second
-        _seconds=0;
-        _hours=0;
-        _minuts=0;
+
+        _c=new Clock();
         _lblTime=new JLabel();
-        _lblTime.setText(getTime());
+        _lblTime.setText(_c.toString());
         _lblTime.setFont(new Font("Candara",Font.BOLD,30));
         center.add(_lblTime);
         center.add(_bg);
@@ -86,16 +83,8 @@ public class GameWindow extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==_t) {
-            _seconds++;
-            if (_seconds == 60) {
-                _seconds = 0;
-                _minuts++;
-                if (_minuts == 60) {
-                    _minuts = 0;
-                    _hours++;
-                }
-            }
-            _lblTime.setText(this.getTime());
+            _c.add();
+            _lblTime.setText(_c.toString());
             //this.repaint();
 
         }
@@ -113,31 +102,6 @@ public class GameWindow extends JPanel implements ActionListener{
 
     }
 
-
-    /**
-     * gets full time string
-     * @return a formated string representing time
-     */
-    private String getTime()
-    {
-        String ans="";
-        if(_hours<10)
-            ans+="0"+_hours;
-        else
-            ans+=_hours;
-        ans+="-";
-        if(_minuts<10)
-            ans+="0"+_minuts;
-        else
-            ans+=_minuts;
-        ans+="-";
-        if(_seconds<10)
-            ans+="0"+_seconds;
-        else
-            ans+=_seconds;
-        return ans;
-
-    }
     /**
      * What to do if the player finished the game
      */
@@ -151,14 +115,15 @@ public class GameWindow extends JPanel implements ActionListener{
         int h=Integer.parseInt(t[0]);
         int m=Integer.parseInt(t[1]);
         int s=Integer.parseInt(t[2]);
-        if(h<_hours)
-            level.set_bestTime(getTime());
-        else if(h==_hours && m<_minuts)
-            level.set_bestTime(getTime());
-        else if(h==_hours && m==_minuts && s<_seconds)
-            level.set_bestTime(getTime());
+        if(h<_c.get_hours())
+            level.set_bestTime(_c.toString());
+        else if(h==_c.get_mins() && m<_c.get_mins())
+            level.set_bestTime(_c.toString());
+        else if(h==_c.get_hours() && m== _c.get_mins() && s<_c.get_secs())
+            level.set_bestTime(_c.toString());
         level.reSaveLevel();
         this.setVisible(false);
+        _t.stop();
         removeAll();
         getParent().add(new MainMenu(null));
     }
