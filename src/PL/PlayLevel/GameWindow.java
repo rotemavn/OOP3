@@ -1,6 +1,7 @@
 package PL.PlayLevel;
 
 import BL.Level;
+import PL.Game;
 import PL.MainMenu;
 
 import javax.imageio.ImageIO;
@@ -107,7 +108,7 @@ public class GameWindow extends JPanel implements ActionListener{
         else if(e.getSource()== goToMenu){
             this.setVisible(false);
             super.removeAll();
-            getParent().add(new MainMenu(this));
+            ((Game)this.getRootPane().getParent()).newAdd(new MainMenu(this));
         }
 
     }

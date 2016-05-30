@@ -78,9 +78,9 @@ public class MainMenu extends JPanel implements MouseListener {
         this.removeAll();
         this.setVisible(false);
         if (e.getSource().equals(option1))
-            getParent().add(new LevelSelection());
+            ((Game)this.getRootPane().getParent()).newAdd(new LevelSelection());
         if (e.getSource().equals(option2))
-            getParent().add(new LevelEditor());
+            ((Game)this.getRootPane().getParent()).newAdd(new LevelEditor());
         if(e.getSource().equals(option3))
             System.exit(0);
 

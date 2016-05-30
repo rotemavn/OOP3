@@ -127,7 +127,7 @@ public class LevelEditor extends LevelActions implements MouseListener {
             Level level=new Level(levels[target]);
             try {
                 removeAll();
-                getParent().add(new GameWindow(level));
+                ((Game)this.getRootPane().getParent()).newAdd(new GameWindow(level));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -147,7 +147,7 @@ public class LevelEditor extends LevelActions implements MouseListener {
             this.removeAll();
             setVisible(false);
             try {
-                getParent().add(new EditWindow());
+                ((Game)this.getRootPane().getParent()).newAdd(new EditWindow());
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -168,7 +168,7 @@ public class LevelEditor extends LevelActions implements MouseListener {
         levels[target].delete(); // removing the level file from the Level folder
         JOptionPane.showMessageDialog(new JFrame(),"The level was deleted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
         setVisible(false);
-        getParent().add(new LevelEditor());
+        ((Game)this.getRootPane().getParent()).newAdd(new LevelEditor());
 
 
     }

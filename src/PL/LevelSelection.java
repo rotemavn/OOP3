@@ -109,7 +109,7 @@ class LevelSelection extends LevelActions implements MouseListener {
     public void startPlaying(int l) throws IOException {
         Level level=new Level(levels[l]); // create a new level
         this.setVisible(false);
-        getParent().add(new GameWindow(level)); // opening a new game window with the level.
+        ((Game)this.getRootPane().getParent()).newAdd(new GameWindow(level)); // opening a new game window with the level.
 
     }
 }

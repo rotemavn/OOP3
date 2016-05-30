@@ -3,18 +3,21 @@ package PL;
 import javax.swing.*;
 
 
-class Game {
-    protected final JFrame frame;
+public class Game extends JFrame{
 
     public Game(){
-        frame=new JFrame("Escape Grid"); //creating new game window
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(1409,830);
-        frame.setResizable(false);
+        this.setName("Escape Grid");
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setSize(1409,830);
+        this.setResizable(false);
         JPanel mainMenu=new MainMenu(null);
-        frame.add(mainMenu);
-        frame.setVisible(true);
+        this.setContentPane(mainMenu);
+        this.setVisible(true);
 
+    }
+    public void newAdd (JPanel add) {
+        this.setContentPane(add);
+        add.requestFocus();
     }
 
 

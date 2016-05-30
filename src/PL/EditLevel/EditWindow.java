@@ -1,6 +1,7 @@
 package PL.EditLevel;
 
 import BL.*;
+import PL.Game;
 import PL.MainMenu;
 
 import javax.imageio.ImageIO;
@@ -158,7 +159,7 @@ public class EditWindow extends JPanel implements ActionListener {
 
         if (e.getSource() == goToMenu) {
             this.setVisible(false);
-            getParent().add(new MainMenu(this));
+            ((Game)this.getRootPane().getParent()).newAdd(new MainMenu(this));
         }
 
         if(e.getSource()==_btnSave){
