@@ -7,87 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94961d03-e009-4444-bca8-9f38b7576fc1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/hw3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/500_F_89761794_4EvJIyAEOqp5HGfzg5oPD0pDs7msSwnN.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/Background1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/Background2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/EditLevels.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/Exit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/ScreensBackground.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/TargetCar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/TruckVer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/Welcome.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/backgroundTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/buttonTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/carHor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/carVer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/chooseLevel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/headingTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/newButton.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/newHeading2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/newHeadingTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/newheading3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/return.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/truckHor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/undo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Images/undo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/500_F_89761794_4EvJIyAEOqp5HGfzg5oPD0pDs7msSwnN.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/Background1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/Background2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/EditLevels.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/Exit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/PL/LevelEditor$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/PL/LevelSelection$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/ScreensBackground.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/TargetCar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/TruckVer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/Welcome.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/backgroundTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/buttonTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/carHor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/carVer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/chooseLevel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/headingTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/newButton.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/newHeading2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/newHeadingTemplate.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/newheading3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/return.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/truckHor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/undo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/undo1.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/BL/Level.class" afterPath="$PROJECT_DIR$/out/BL/Level.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/BL/Move.class" afterPath="$PROJECT_DIR$/out/BL/Move.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/BL/Piece.class" afterPath="$PROJECT_DIR$/out/BL/Piece.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/BL/Position.class" afterPath="$PROJECT_DIR$/out/BL/Position.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/BL/Role.class" afterPath="$PROJECT_DIR$/out/BL/Role.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/EditLevel/EditGrid.class" afterPath="$PROJECT_DIR$/out/PL/EditLevel/EditGrid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/EditLevel/EditWindow.class" afterPath="$PROJECT_DIR$/out/PL/EditLevel/EditWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/Game.class" afterPath="$PROJECT_DIR$/out/PL/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/GameBoard.class" afterPath="$PROJECT_DIR$/out/PL/GameBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/Launcher.class" afterPath="$PROJECT_DIR$/out/PL/Launcher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/LevelEditor.class" afterPath="$PROJECT_DIR$/out/PL/LevelEditor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/LevelSelection.class" afterPath="$PROJECT_DIR$/out/PL/LevelSelection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/MainMenu.class" afterPath="$PROJECT_DIR$/out/PL/MainMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/PlayLevel/BoardGrid.class" afterPath="$PROJECT_DIR$/out/PL/PlayLevel/BoardGrid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PL/PlayLevel/GameWindow.class" afterPath="$PROJECT_DIR$/out/PL/PlayLevel/GameWindow.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Levels/l4.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/l1.txt" afterPath="$PROJECT_DIR$/out/l1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BL/Level.java" afterPath="$PROJECT_DIR$/src/BL/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BL/Move.java" afterPath="$PROJECT_DIR$/src/BL/Move.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BL/Piece.java" afterPath="$PROJECT_DIR$/src/BL/Piece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BL/Position.java" afterPath="$PROJECT_DIR$/src/BL/Position.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BL/Role.java" afterPath="$PROJECT_DIR$/src/BL/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/EditLevel/EditGrid.java" afterPath="$PROJECT_DIR$/src/PL/EditLevel/EditGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/EditLevel/EditWindow.java" afterPath="$PROJECT_DIR$/src/PL/EditLevel/EditWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/Game.java" afterPath="$PROJECT_DIR$/src/PL/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/GameBoard.java" afterPath="$PROJECT_DIR$/src/PL/GameBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/Launcher.java" afterPath="$PROJECT_DIR$/src/PL/Launcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/LevelEditor.java" afterPath="$PROJECT_DIR$/src/PL/LevelEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/MainMenu.java" afterPath="$PROJECT_DIR$/src/PL/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/PlayLevel/BoardGrid.java" afterPath="$PROJECT_DIR$/src/PL/PlayLevel/BoardGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PL/PlayLevel/Clock.java" afterPath="$PROJECT_DIR$/src/PL/PlayLevel/Clock.java" />
     </list>
     <ignored path="OOP3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -752,7 +673,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464620680903</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="almost complete&#10;">
+      <created>1464688041091</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1464688041091</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
