@@ -5,6 +5,7 @@ public class Piece {
     private int _size;
     private Role _role;
     private Orientation _orientation;
+
     //region constractors
     public  Piece(String s)
     {
@@ -32,6 +33,11 @@ public class Piece {
     }
     //endregion
     //region move
+
+    /**
+     * @param start - a start position
+     * @return true when positioning is successful
+     */
     public boolean move(Position start)
     {
         _start=new Position(start);
@@ -76,10 +82,15 @@ public class Piece {
     }
     //endregion
 
+
+    /**
+     * @return a string representation of the piece
+     */
     public String toString()
     {
         return _start+"_"+_size+"_"+_role+"_"+_orientation;
     }
+
     //region gettrs
     public Role get_role()
     {
@@ -99,7 +110,7 @@ public class Piece {
     }
     public Position get_end()
     {
-        Position ans;
+
         if(this._orientation==Orientation.HORIZONTAL)
         {
             return new Position(_start.getX()+_size-1,_start.getY());
@@ -112,9 +123,13 @@ public class Piece {
         this._role=r;
     }
     //endregion
+
+    /**
+     * @param p other piece
+     * @return if the two pieces are equal
+     */
     public boolean equals(Piece p) {
-        boolean ans=true;
-        ans=this._start.equals(p._start)&&this.get_size()==p._size&&this._role==p._role&&this._orientation==p._orientation;
+        boolean ans=this._start.equals(p._start)&&this.get_size()==p._size&&this._role==p._role&&this._orientation==p._orientation;
         return ans;
     }
 }

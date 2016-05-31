@@ -1,9 +1,6 @@
 package PL.PlayLevel;
 
-import BL.Level;
-import BL.Move;
-import BL.Piece;
-import BL.Position;
+import BL.*;
 import PL.GameBoard;
 import javafx.util.Pair;
 
@@ -13,9 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-/**
- * Created by liorbass on 17/05/2016.
- */
+
 public class BoardGrid extends GameBoard {
 
     private boolean _isFinished;
@@ -67,8 +62,6 @@ public class BoardGrid extends GameBoard {
     }
 
 
-    //public void keyPressed(KeyEvent e) is implemented at super
-
     @Override
     public void keyReleased(KeyEvent e) {
 
@@ -82,9 +75,8 @@ public class BoardGrid extends GameBoard {
     protected void moveButton(JButton b, Position pos) {
 
             Piece p = _selected.getKey();
-            GridBagConstraints c = new GridBagConstraints();
             GridBagLayout gbl = (GridBagLayout) this.getLayout();
-            c = gbl.getConstraints(b);
+            GridBagConstraints c = gbl.getConstraints(b);
             c.gridx = pos.getX();
             c.gridy = pos.getY();
             Position bpos = GetButtonIndex(b);
@@ -104,30 +96,18 @@ public class BoardGrid extends GameBoard {
     {
         Move m= _l.undoMove();
         if(m!=null) {
-            moveButton(buttonArr[m.GetEnd().getX()][m.GetEnd().getY()], m.GetStart());
+            moveButton(buttonArr[m.getEnd().getX()][m.getEnd().getY()], m.getStart());
             return true;
         }
         return false;
     }
 
-    /**
-     * Checks if the piece pic is at the spot endPos
-     * @param pic piece to check location of
-     * @return  true if piece is at location, false otherwise
-     */
-   /* private boolean isFinished(Piece pic)
-    {
-        boolean ans;
-        Position picEndPos=pic.get_end();
-        ans=picEndPos.equals(endPos)||pic.get_start().equals(endPos);
-        return ans;
-    }*/
 
     private void isFinished(Piece pic)
     {
         boolean ans;
         Position picEndPos=pic.get_end();
-        ans=picEndPos.equals(END_POSITION)||pic.get_start().equals(END_POSITION);
+        ans=pic.get_role()== Role.Target&&(picEndPos.equals(END_POSITION)||pic.get_start().equals(END_POSITION));
         if(ans) {
             endGame();
         }

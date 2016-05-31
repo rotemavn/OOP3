@@ -3,7 +3,6 @@ package PL.EditLevel;
 import BL.*;
 import PL.Game;
 import PL.MainMenu;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +24,7 @@ public class EditWindow extends JPanel implements ActionListener {
     private JButton goToMenu;
     private JButton _btnSave;
 
-
+    //constructor
     public EditWindow() throws IOException {
         super();
         removeAll();
@@ -80,7 +79,6 @@ public class EditWindow extends JPanel implements ActionListener {
         _vp = this.setPieces();
         //set buttons
         this._btnDefultPiece = this.getPiecesButtons();
-        JPanel jp2 = new JPanel();
 
         int i = 0;
         Integer j;
@@ -99,6 +97,12 @@ public class EditWindow extends JPanel implements ActionListener {
         this.revalidate();
     }
 
+    /**
+     * The function sets the car panel
+     * @param b - empty button
+     * @param size - the size of the piece
+     * @param orientation - whether the piece is horizontal or vertical
+     */
     private void setButton(JButton b, int size, Orientation orientation) {
         try {
             String currPath = Paths.get(".").toAbsolutePath().normalize().toString();
@@ -114,18 +118,18 @@ public class EditWindow extends JPanel implements ActionListener {
 
                 if (size == 3) {
                     b.setIcon(truckHor);
-                    //b.setPreferredSize(new Dimension(155, 55));
+
                 } else {
                     b.setIcon(carHor);
-                   // b.setPreferredSize(new Dimension(105, 55));
+
                 }
             } else {  //piece is vertical
                 if (size == 3) {
                     b.setIcon(truckVer);
-                    //b.setPreferredSize(new Dimension(55, 155));
+
                 } else {
                     b.setIcon(carVer);
-                  //  b.setPreferredSize(new Dimension(55, 105));
+
                 }
             }
             b.setPreferredSize(new Dimension(b.getIcon().getIconHeight(),b.getIcon().getIconWidth()));
@@ -150,7 +154,7 @@ public class EditWindow extends JPanel implements ActionListener {
             Piece selected = getPieceByButton((JButton) e.getSource());
             if (selected != null) {
                 _eg.setSelectedPiece(selected);
-                markSelected(((JButton) e.getSource()));
+
             }
         }
 
@@ -164,20 +168,12 @@ public class EditWindow extends JPanel implements ActionListener {
         }
     }
 
-    private void markSelected(JButton b) {
-        for (JButton curb : _btnDefultPiece) {
-            if (curb != b) {
-                b.setOpaque(false);
-                b.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
-            } else {
-                b.setOpaque(true);
-                b.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-            }
-        }
 
-    }
-
-
+    /**
+     *
+     * @param jb selected button
+     * @return a piece that is placed in the button's location
+     */
     private Piece getPieceByButton(JButton jb) {
 
         for (int i = 0; i < _btnDefultPiece.size(); i++) {
@@ -204,22 +200,12 @@ public class EditWindow extends JPanel implements ActionListener {
     /**
      * return a vector of JButtons representing the defult pieces
      *
-     * @returnvector of JButtons representing the defult pieces
+     * @return vector of JButtons representing the defult pieces
      */
     private Vector<JButton> getPiecesButtons() {
         Vector<JButton> vjb = new Vector<JButton>();
         for (Piece p : _vp) {
             JButton b = new JButton();
-           /* if (p.get_orientation() == Orientation.HORIZONTAL) {  //piece is horizontal
-                b.setPreferredSize(new Dimension(20 * p.get_size(), 20));
-            } else {  //piece is vertical
-                b.setPreferredSize(new Dimension(20, 20 * p.get_size()));
-            }*/
-           /* if (p.get_role() == Role.Target)     //if the piece is the targerpiece
-            {
-                b.setBackground(Color.red);
-                b.setOpaque(true);
-            }*/
             vjb.add(b);
         }
         return vjb;
@@ -229,6 +215,7 @@ public class EditWindow extends JPanel implements ActionListener {
         g.drawImage(background, 0, 0, null);
     }
 
+    //pops a window if a level was saved
     private void saveLevel() {
         if (_eg.saveLevel()) {
             JOptionPane.showMessageDialog(new JFrame(), "The level was Saved", "Confirmation", JOptionPane.INFORMATION_MESSAGE);

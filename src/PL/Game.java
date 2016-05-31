@@ -15,6 +15,11 @@ public class Game extends JFrame{
         this.setVisible(true);
 
     }
+
+    /**
+     * The function adds panels to the JFrame
+     * @param add JPanel we want to add to the frame
+     */
     public void newAdd (JPanel add) {
         this.setContentPane(add);
         add.requestFocus();

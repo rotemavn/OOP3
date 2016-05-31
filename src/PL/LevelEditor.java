@@ -6,8 +6,6 @@ import PL.PlayLevel.GameWindow;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -157,7 +155,7 @@ public class LevelEditor extends LevelActions implements MouseListener {
      * The function deletes the level requested by the user, and reloads the edit screen
      */
     private void deleteLevel(){
-        String lName=levels[target].getName();
+
         levels[target].delete(); // removing the level file from the Level folder
         for(int i=target+1;i<levels.length;i++) // rename the files name greather then this
         {

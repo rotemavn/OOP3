@@ -6,7 +6,7 @@ public class Position {
     //region constractors
     public Position (String s)
     {
-        String[] pos=s.split("\\."); //error with this line - doesn't perform split
+        String[] pos=s.split("\\.");
         this._x=Integer.parseInt(pos[0]);
         this._y=Integer.parseInt(pos[1]);
     }
@@ -35,11 +35,20 @@ public class Position {
     {
         return _x+"."+_y;
     }
+
+    /**
+     * @return true if this position is valid on the board
+     */
     public boolean isValid()
     {
         return _x>=0&_y>=0&_x<6&_y<6;
     }
 
+    /**
+     * the function comapres between two positions
+     * @param obj another position
+     * @return true if this and obj are equal
+     */
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Position)

@@ -14,9 +14,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-/**
- * Created by liorbass on 17/05/2016.
- */
 public abstract class GameBoard extends JLayeredPane implements KeyListener,ActionListener{
 
     protected final int SIZE=6;
@@ -24,13 +21,12 @@ public abstract class GameBoard extends JLayeredPane implements KeyListener,Acti
     protected Pair<Piece,JButton> _selected;
     protected Level _l;
 
+    //constructor
     protected GameBoard() throws IOException {
         super();
         this.setLayout(new GridBagLayout());
         this.setPreferredSize(new Dimension(500,500));
 
-
-        //JComponent[][]=new JComponent();
         buttonArr=new JButton[SIZE][SIZE];
         GridBagConstraints c= new GridBagConstraints();
         c.fill=GridBagConstraints.BOTH;
@@ -95,12 +91,11 @@ public abstract class GameBoard extends JLayeredPane implements KeyListener,Acti
             int key = e.getKeyCode();
             JButton b= _selected.getValue();
             Position tempPos = _selected.getKey().get_start();
-            GridBagConstraints c = new GridBagConstraints();
+
             boolean flag=false;
             if (key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A){
 
                 if (_l.move(_selected.getKey(), new Position(tempPos.moveLeft()))) {
-                    //_selected.getValue().add(_selected,c);
                     tempPos = tempPos.moveLeft();
                     flag=true;
                 }
@@ -133,7 +128,7 @@ public abstract class GameBoard extends JLayeredPane implements KeyListener,Acti
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
-            //_selected.getValue().setLocation(tempPos.getX(), tempPos.getY());
+
         }
     }
     protected abstract void moveButton(JButton b, Position pos) throws IOException;
@@ -179,9 +174,7 @@ public abstract class GameBoard extends JLayeredPane implements KeyListener,Acti
         ImageIcon truckVer = new ImageIcon(ImageIO.read(new File(currPath+"/Images/TruckVer1.png")));
         ImageIcon targetCar = new ImageIcon(ImageIO.read(new File(currPath+"/Images/TargetCar1.png")));
 
-
         JButton b= new JButton();
-
 
         b.setBackground(Color.WHITE);
         if (p.get_orientation() == Orientation.HORIZONTAL) {  //piece is horizontal
@@ -198,7 +191,7 @@ public abstract class GameBoard extends JLayeredPane implements KeyListener,Acti
             else
                 b.setIcon(carVer);
         }
-        if(p.get_role()==Role.Target)     //if the piece is the targerpiece
+        if(p.get_role()==Role.Target)     //if the piece is the target piece
             b.setIcon(targetCar);
         if(p.get_start().getX()==5 && p.get_start().getY()==2){
             ImageIcon img = new ImageIcon(ImageIO.read(new File(currPath+"/Images/endPos.png")));

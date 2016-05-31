@@ -13,11 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-import static BL.Role.Target;
 
-/**
- * Created by liorbass on 20/05/2016.
- */
+
+
 public class EditGrid extends GameBoard {
 
     private Piece _toAdd;
@@ -42,7 +40,7 @@ public class EditGrid extends GameBoard {
      * level constractor
      * edit existing level
      *
-     * @param l
+     * @param l a new level
      */
     public EditGrid(Level l) throws IOException {
         super();
@@ -99,6 +97,7 @@ public class EditGrid extends GameBoard {
                     Piece p = new Piece(new Position(i, j), 1, Role.Reg, Orientation.HORIZONTAL);
                     b = getJButton(p);
                     b.addActionListener(this);
+                    b.setFocusable(false);
                     c = getConstrains(p);
                     EmptyButtons[i][j] = b;
                     this.add(b, c, 1);
@@ -108,7 +107,7 @@ public class EditGrid extends GameBoard {
         this.revalidate();
     }
     private void setTargetPiece() throws IOException {
-        Piece target=new Piece(new Position(0,2),2, Target,Orientation.HORIZONTAL);
+        Piece target=new Piece(new Position(0,2),2, Role.Target,Orientation.HORIZONTAL);
         _l.addPiece(target);
         addButtonForNewMainPiece(target);
     }
@@ -128,7 +127,7 @@ public class EditGrid extends GameBoard {
     public boolean deletePiece() throws IOException {
         Position pl = _selected.getKey().get_start();
         Piece p = _l.getPieceByPosition(pl);
-        if (p != null &&p.get_role()!= Target&& _l.removePiece(p)) {
+        if (p != null &&p.get_role()!= Role.Target&& _l.removePiece(p)) {
             int x = pl.getX();
             int y = pl.getY();
             JButton b = buttonArr[x][y];
@@ -269,6 +268,12 @@ public class EditGrid extends GameBoard {
         }
     }
 
+    /**
+     *
+     * @param p piece to match
+     * @return a JButton whith the right icon
+     * @throws IOException
+     */
     protected JButton getJButton(Piece p) throws IOException {
         ImageIcon targetCar = new ImageIcon(ImageIO.read(new File(Paths.get(".").toAbsolutePath().normalize().toString()+"/Images/TargetCar1.png")));
         JButton b= new JButton();
@@ -300,7 +305,7 @@ public class EditGrid extends GameBoard {
 
     }
 
-    //public void keyPressed(KeyEvent e) is implemented at super
+
     @Override
     public void keyReleased(KeyEvent e) {
 
@@ -333,6 +338,10 @@ public class EditGrid extends GameBoard {
         this.revalidate();
     }
 
+    /**
+     * Calls for the Level class save method
+     * @return true if the level was saved
+     */
     public boolean saveLevel() {
         return  _l.saveLevel();
 

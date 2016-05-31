@@ -5,12 +5,10 @@ import java.nio.file.Paths;
 import java.util.Stack;
 import java.util.Vector;
 
-/**
- * Created by liorbass on 17/05/2016.
- */
+
 public class Level {
 
-    protected final int SIZE = 6;
+    private final int SIZE = 6;
     private Vector<Piece> _vp;
     private String _bestTime;
     private Stack<Move> _sm;
@@ -82,6 +80,7 @@ public class Level {
 
     }
     //endregion
+
     //region moves
 
     /**
@@ -107,10 +106,9 @@ public class Level {
      * @return true if succeed
      */
     public Move undoMove() {
-        boolean ans = true;
         if(!_sm.empty()) {
             Move m = _sm.pop();
-            m.getPiece().move(m.GetStart());
+            m.getPiece().move(m.getStart());
             return m;
         }
         return null;
@@ -125,29 +123,21 @@ public class Level {
      */
     private boolean isValidMove(Move m) {
         boolean ans = false;
-        if (m.GetEnd().isValid()) {
+        if (m.getEnd().isValid()) {
             if (m.getPiece().get_orientation() == Orientation.HORIZONTAL) {
-                if (m.GetEnd().getX() + m.getPiece().get_size() <= SIZE) {
-                    if (m.GetStart().getY() == m.GetEnd().getY())
+                if (m.getEnd().getX() + m.getPiece().get_size() <= SIZE) {
+                    if (m.getStart().getY() == m.getEnd().getY())
                         ans = true;
                 }
 
 
             } else {
-                if (m.GetEnd().getY() + m.getPiece().get_size() <= SIZE) {
-                    if (m.GetStart().getX() == m.GetEnd().getX())
+                if (m.getEnd().getY() + m.getPiece().get_size() <= SIZE) {
+                    if (m.getStart().getX() == m.getEnd().getX())
                         ans = true;
                 }
             }
-            //start setup for conflicts check
-            //Vector<Piece> tvp=new Vector<Piece>(_vp);
-            //tvp.remove(m.getPiece());
-            //Level tlvl= new Level(tvp);
-            //Piece tp=new Piece(m.getPiece());
-            //tp.move(m.GetEnd());
-            //end setup for conflict check
-            //ans=ans&tlvl.AddPiece(tp); // check for pieces conflicts
-            ans = ans & canPlace(m.getPiece(), m.GetEnd());
+            ans = ans & canPlace(m.getPiece(), m.getEnd());
         }
         return ans;
     }
@@ -194,7 +184,7 @@ public class Level {
     /**
      * Converts current Level to string
      *
-     * @return
+     * @return string representation of the level
      */
     public String toString() {
         String ans = "";
@@ -245,10 +235,16 @@ public class Level {
         return _vp.removeElement(p);
     }
 
+    /**
+     * Saving this level instance to file
+     * @return true if the level was saved successfully
+     */
+
     public Boolean saveLevel()
     {
         String lev=this.toString();
         String [] levParts=lev.split("%");
+
         //get level name
         String levName;
         File[] levels;
@@ -274,6 +270,11 @@ public class Level {
             return false;
         }
     }
+
+    /**
+     * The function saves in a file an existing level.
+     * Used when there is a need to update the best time.
+     */
 
     public void reSaveLevel(){
         String lev=this.toString();
@@ -301,15 +302,24 @@ public class Level {
     }
 
 
-
+    /**
+     * The function sets a new best time
+     * @param _bestTime a new best time
+     */
     public void set_bestTime(String _bestTime) {
         this._bestTime = _bestTime;
     }
 
+    /**
+     * @return the best time
+     */
     public String get_bestTime() {
         return _bestTime;
     }
 
+    /**
+     * @return the file where the level is saved
+     */
     private File get_levelFile(){
         return this.levelFile;
     }

@@ -18,7 +18,7 @@ public class MainMenu extends JPanel implements MouseListener {
     private JButton option2;
     private JButton option3;
 
-
+    //constructor
     public MainMenu() {
 
         try {

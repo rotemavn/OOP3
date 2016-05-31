@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: C:\Users\rOTEM\Documents\School\Semester_B\OOSD\hw3\OOP3
+Main-Class: PL.Launcher
+

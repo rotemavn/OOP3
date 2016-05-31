@@ -1,8 +1,6 @@
 package PL.PlayLevel;
 
-/**
- * Created by liorbass on 30/05/2016.
- */
+
  class Clock {
     private int _secs;
     private int _mins;
